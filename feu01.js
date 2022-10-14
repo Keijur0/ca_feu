@@ -7,6 +7,16 @@ function nbArgCheck(param1){
     }
     return true;
 }
+function isANumber(param1){
+    let length = param1.length;
+    for(let i = 0; i<length; i++){
+        if(param1[i].charCodeAt() < 48 || param1[i].charCodeAt() > 57){
+            return false;
+        }
+    }
+    return true;
+}
+// Changing the expression format in an array so it can be processed
 function formatExpression(param1){
     let newArray = [];
     let length = param1.length;
@@ -36,6 +46,7 @@ function formatExpression(param1){
     }
     return newArray;
 }
+// Checking for any char left (specified in arg)
 function anyLeft(param1, param2, param3, param4){
     let subArray = param1;
     let symbol = param2;
@@ -121,15 +132,6 @@ function updateTable(param1, param2, param3, param4){
     // Replace the calculation in the table by the result
     subArray.splice(leftIndex, toDelete, calcResult);
     return subArray;
-}
-function isANumber(param1){
-    let length = param1.length;
-    for(let i = 0; i<length; i++){
-        if(param1[i].charCodeAt() < 48 || param1[i].charCodeAt() > 57){
-            return false;
-        }
-    }
-    return true;
 }
 function isFirstPriority(param1){
     let symbol = param1;
