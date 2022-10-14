@@ -43,9 +43,6 @@ function testToDo(param1, param2, param3, param4){
     let originRow = param3;
     let originColumn = param4;
     let k = 0;
-    let nbSpaces = 0;
-    let l = 0;
-    console.log(originRow + " " + originColumn);
     // From the origin point, testing if the rest of the form
     // Making sure we are not going out of the board nor the form
     for(i = originRow ; i < originRow + formLength; i++){
@@ -54,23 +51,14 @@ function testToDo(param1, param2, param3, param4){
         }
         let strFormLength = form[k].length;
         let strBoardlength = board[i].length;
-        // Initializing the first character to compare in the form, depending on number of spaces
-        for(let i = 0; i < strFormLength; i++)
-        {
-            if(form[i] == " "){
-                nbSpaces++;
-            }
-        }
         l = 0;
-        for(j = originColumn; j < originColumn+strFormLength-nbSpaces; j++){
-            console.log(k + " " + l + " - " + i + " " + j);
-            console.log(form[k][l] + " - " + board[i][j]);
+        for(j = originColumn; j < originColumn+strFormLength; j++){
             // In we go out of the board
             if(j > strBoardlength-1 || i > boardLength-1){
                 return false;
             }
             // If there is a space in the form, we don't compare it
-            else if(form[k][l] == " "){
+            if(form[k][l] == " "){
                 // Checking if we are exceeding the form's size
                 if(l < strFormLength-1){
                     l++;
@@ -140,7 +128,6 @@ function findForm(param1, param2){
             if(form[0][k] == board[i][j]){
                 let tempOriginRow = i;
                 let tempOriginColumn = j;
-                console.log(testToDo(board, form, tempOriginRow, tempOriginColumn));
                 if(testToDo(board, form, tempOriginRow, tempOriginColumn)){
                     // We found the form in the board
                     coordinates = isMyResult(tempOriginRow, tempOriginColumn);
