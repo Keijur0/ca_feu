@@ -109,7 +109,6 @@ function findLargestSquare(param1, param2){
             }
         }
     }
-    console.log(biggestSquareProp);
     return biggestSquareProp;
 }
 // Trying to draw a square on the board, returns the size if succeeding
@@ -122,7 +121,6 @@ function tryDrawSquare(param1, param2, param3, param4, param5){
     const size = param5;
     const squareLength = line + size;
     const squareHeight = col + size;
-    console.log(line + " " + col + " " + size);
     for(let i = line; i < squareLength; i++){
         for(let j = col; j < squareHeight; j++){
             if(newArray[i][j] == obs){
@@ -167,7 +165,6 @@ function formatResult(param1){
             result = result + "\n";
         }
     }
-    console.log(result);
     return result;
 }
 // Part 1: Parsing
@@ -189,4 +186,4 @@ largestSquare = findLargestSquare(board, boardProperties);
 result = drawLargestSquare(board, largestSquare, boardProperties[3]);
 finalResult = formatResult(result);
 // Part 4: Display result
-/* console.log(finalResult); */
+console.log(finalResult);
