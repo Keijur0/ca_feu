@@ -1,3 +1,4 @@
+// This script takes a board as argument and will return the largest square found in it
 // Functions
 // Checking if there are more or less than 1 argument
 function nbArgCheck(param1){
